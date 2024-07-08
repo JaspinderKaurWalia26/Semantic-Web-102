@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimal-ui">
+    <title>Tasks Done</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="https://www.gndec.ac.in/"><img src="./logo.png" alt="GNDEC Logo"></a>
+            <a href="#" class="home-button" onclick="showSection('home')">Home</a>
+            
+        </header>
+        
+
+        <section id="home" class="section active">
+            <h1>Training TR-102 Report</h1>
+            <h2>Other Work</h2>
+            <p>By:Jaspinder Kaur Walia<br> Class:CSE-C2 <br>URN:2203843<br>CRN:2215199 <br>Guru Nanak Dev Engineering College Ludhiana</p>
+            <h2>4 Week Training On <br> Mastering The Semantic Web </h2>
+        </section>
+        <nav>
+            <a href="#" onclick="showSection('Task1')">HTML and CSS Code</a>
+            <a href="#" onclick="showSection('Task2')" >Food Website</a>
+            <a href="#" onclick="showSection('Task3')" >Travel Website</a>
+            <a href="#" onclick="showSection('Task4')" >JSON and XML </a>
+            <a href="#" onclick="showSection('Task5')">Turtle</a>
+            <a href="#" onclick="showSection('Task6')" >Ontology Architecture</a>
+            <br>
+        </nav>
+        <section id="Task1" class="section">
+            <h1>View HTML and CSS Code</h1>
+            <div class="pdf-container">
+                <a href="https://github.com/JaspinderKaurWalia26/MASTERING-THE-SEMANTIC-WEB-TR-102-/tree/43c9c5712c68049b862235a35cfa10b62bf9a14e/Code">View HTML and CSS Code</a>
+            </div>
+        </section>
+        <section id="Task2" class="section">
+            <h1>Food Website</h1>
+            <div class="pdf-container">
+                <iframe src="./Code/Css Fundamentals/Food Website/web.html"></iframe>
+            </div>
+        </section>
+        <section id="Task3" class="section">
+            <h1>Travel Website</h1>
+            <div class="pdf-container">
+                <iframe src="./Code/Fluid Concept/HW/Travel.html"></iframe>
+            </div>
+        </section>
+       
+        <section id="Task4" class="section">
+            <h1>JSON and XML code</h1>
+            <div class="pdf-container">
+                <a href="https://github.com/JaspinderKaurWalia26/MASTERING-THE-SEMANTIC-WEB-TR-102-/tree/ca3f142fa51d415599341ae27396e36bec29a9c1/JSON%20and%20XML">View JSON and XML Code</a>
+               
+            </div>
+        </section>
+        <section id="Task5" class="section">
+            <h1>Turtle Folder</h1>
+            <div class="pdf-container">
+                <a href="https://github.com/JaspinderKaurWalia26/MASTERING-THE-SEMANTIC-WEB-TR-102-/tree/ca3f142fa51d415599341ae27396e36bec29a9c1/Turtle">View Turtle Folder</a>
+            </div>
+        </section>
+        
+        <section id="Task6" class="section">
+            <h1>Ontology Architecture</h1>
+            <div class="pdf-container">
+                <a href="https://github.com/JaspinderKaurWalia26/MASTERING-THE-SEMANTIC-WEB-TR-102-/tree/43c9c5712c68049b862235a35cfa10b62bf9a14e/Ontology%20Architecture">View Ontology Architecture</a>
+            </div>
+        </section>
+        
+
+        <footer>
+            <a href="https://www.linkedin.com/in/jaspinder-kaur-walia-479038251?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"> <img src="./linkdin logo.webp" alt="Unable to load" height="20px"></a>
+            <button class="main_button"><a href="./index.html">Main Page</a></button>
+         </footer>
+    </div>
+    <script>
+        function showSection(id) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.gallery img');
+        const captions = document.querySelectorAll('.gallery .caption');
+
+        function showSlide(index) {
+            images.forEach((img, i) => {
+                img.classList.remove('active');
+                captions[i].style.display = 'none';
+            });
+            images[index].classList.add('active');
+            captions[index].style.display = 'block';
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showSlide(currentIndex);
+        }
+
+        setInterval(nextSlide, 4000); 
+    </script>
+</body>
+</html>
